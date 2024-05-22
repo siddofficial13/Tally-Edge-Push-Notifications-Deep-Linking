@@ -21,7 +21,7 @@ Introduce a push notification and deep link handler in the TallyEdge backend and
 - *Express*: Web application framework for Node.js
 - *Deep Links*: URLs that link directly to specific content within an app
 - *Design Thinking*: Approach for user-centric problem solving and solution design
-- *Firebase*: Platform for building web and mobile applications, used for push notifications
+- *Firebase*: Platform for building web and mobile applications(android/ios), used for push notifications
 - *AWS Services*: Cloud services platform
 - *SNS*: Amazon Simple Notification Service for managing and delivering messages
 =======
