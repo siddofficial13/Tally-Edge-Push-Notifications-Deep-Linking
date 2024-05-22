@@ -1,7 +1,7 @@
 
 # Tally-Edge Push Notifications and Deep Linking Framework
 
-## Objective
+## Objective Of the Project
 
 To create a push notifications framework that can send notifications to client machines, whether they are mobile devices, desktops, or browsers.
 
