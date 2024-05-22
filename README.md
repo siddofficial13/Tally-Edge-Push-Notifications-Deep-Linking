@@ -1,7 +1,7 @@
-<<<<<<< HEAD
+
 # Tally-Edge Push Notifications and Deep Linking Framework
 
-## Objective
+## Objective Of the Project
 
 To create a push notifications framework that can send notifications to client machines, whether they are mobile devices, desktops, or browsers.
 
@@ -25,6 +25,7 @@ Introduce a push notification and deep link handler in the TallyEdge backend and
 - *AWS Services*: Cloud services platform
 - *SNS*: Amazon Simple Notification Service for managing and delivering messages
 =======
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
@@ -104,4 +105,4 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
->>>>>>> eb49673 (Initial commit)
+
