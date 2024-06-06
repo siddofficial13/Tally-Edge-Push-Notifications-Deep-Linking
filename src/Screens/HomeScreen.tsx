@@ -1,33 +1,80 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-native/no-inline-styles */
 
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-  StatusBar,
-  Image,
-} from 'react-native';
-import React from 'react';
-import {useNavigation} from '@react-navigation/native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import React, {useState} from 'react';
+import HomeTab from '../tabs/HomeTab';
+import SearchTab from '../tabs/SearchTab';
+import AddTab from '../tabs/AddTab';
+import ChatTab from '../tabs/ChatTab';
+import ProfileTab from '../tabs/ProfileTab';
+
 const HomeScreen = () => {
-  const navigation = useNavigation();
+  const [selectedTab, setSelectedTab] = useState(0);
+
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="dark-content" />
-      <View style={styles.content}>
-        <Image source={require('../assets/logo.png')} style={styles.logo} />
-        {/* <Text style={styles.title}>TallyBuzz</Text> */}
-        <Text style={styles.subtitle}>
-          Stay connected with your fellow employees.
-        </Text>
+      {selectedTab === 0 ? (
+        <HomeTab />
+      ) : selectedTab === 1 ? (
+        <SearchTab />
+      ) : selectedTab === 2 ? (
+        <AddTab />
+      ) : selectedTab === 3 ? (
+        <ChatTab />
+      ) : (
+        <ProfileTab />
+      )}
+      <View style={styles.componentContiner}>
         <TouchableOpacity
-          style={styles.button}
+          style={styles.icons}
           onPress={() => {
-            navigation.navigate('LoginScreen');
+            setSelectedTab(0);
           }}>
-          <Text style={styles.buttonText}>Get Started </Text>
+          <Image
+            source={require('../assets/home.png')}
+            style={styles.icon_element}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.icons}
+          onPress={() => {
+            setSelectedTab(1);
+          }}>
+          <Image
+            source={require('../assets/search.png')}
+            style={styles.icon_element}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.icons}
+          onPress={() => {
+            setSelectedTab(2);
+          }}>
+          <Image
+            source={require('../assets/add.png')}
+            style={styles.icon_element}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.icons}
+          onPress={() => {
+            setSelectedTab(3);
+          }}>
+          <Image
+            source={require('../assets/chat.png')}
+            style={styles.icon_element}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.icons}
+          onPress={() => {
+            setSelectedTab(4);
+          }}>
+          <Image
+            source={require('../assets/profile.png')}
+            style={styles.icon_element}
+          />
         </TouchableOpacity>
       </View>
     </View>
@@ -39,43 +86,26 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
+  },
+  componentContiner: {
+    position: 'absolute',
+    bottom: 0,
+    height: 70,
+    width: '100%',
+    flexDirection: 'row',
+    backgroundColor: 'white',
+    shadowColor: '#000',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+  },
+  icons: {
+    width: '20%',
+    height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
   },
-  content: {
-    alignItems: 'center',
-    paddingHorizontal: 20,
-  },
-  logo: {
-    width: 200,
-    height: 100,
-    marginBottom: 20,
-    resizeMode: 'contain',
-  },
-  title: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    color: '#000000',
-    marginBottom: 10,
-    textAlign: 'center',
-  },
-  subtitle: {
-    fontSize: 18,
-    fontWeight: '300',
-    color: '#000000',
-    marginBottom: 40,
-    textAlign: 'center',
-  },
-  button: {
-    backgroundColor: '#000000',
-    borderRadius: 15,
-    paddingVertical: 10,
-    paddingHorizontal: 30,
-  },
-  buttonText: {
-    fontSize: 18,
-    fontWeight: '500',
-    color: '#ffffff',
+  icon_element: {
+    width: 24,
+    height: 24,
   },
 });

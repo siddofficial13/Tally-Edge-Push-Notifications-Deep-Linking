@@ -1,38 +1,38 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable react-native/no-inline-styles */
-
-import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+//import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {NavigationContainer} from '@react-navigation/native';
+import Home from './Home';
+import Details from './Details';
+import Login from './Login';
+import SignUp from './SignUp';
 import HomeScreen from './HomeScreen';
-import LoginScreen from './LoginScreen';
-import SignUpScreen from './SignUpScreen';
-import HomePageScreen from './HomePageScreen';
+//import NavigationService from '../utils/NavigationService.js';
 
 export type RootStackParamList = {
+  Home: undefined;
+  Details: undefined;
+  Login: {screen?: string} | undefined;
+  SignUp: undefined;
   HomeScreen: undefined;
-  SignUpScreen: undefined;
-  LoginScreen: undefined;
-  HomePageScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const MainNavigator = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="HomeScreen"
-          component={HomeScreen}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen name="LoginScreen" component={LoginScreen} />
-        <Stack.Screen name="SignUpScreen" component={SignUpScreen} />
-        <Stack.Screen name="HomePageScreen" component={HomePageScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    // <NavigationContainer
+    // ref={ref => NavigationService.setTopLevelNavigator(ref)}>
+    <Stack.Navigator>
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Details" component={Details} />
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="SignUp" component={SignUp} />
+      <Stack.Screen
+        name="HomeScreen"
+        component={HomeScreen}
+        options={{headerShown: false}}
+      />
+    </Stack.Navigator>
   );
 };
 
